@@ -1,0 +1,22 @@
+/* Start Header */
+.navbar-default {
+  background: #000;
+  z-index: 999;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.navbar-default .navbar-nav li a {
+  color: #FFF;
+}
+
+/* End Header */

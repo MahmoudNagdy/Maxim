@@ -1,0 +1,150 @@
+/* Start Header */
+.navbar-default{
+    background: $blackColor;
+    z-index: 999;
+    height: 70px;
+    position: fixed;
+    font-family: 'Poppins', sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+    .navbar-brand{
+        @extend %upper;
+        font-size: 30px;
+        color: #FFF;
+        line-height: 1.3;
+        letter-spacing: 1px;
+
+        &:hover{
+            color: #FFF
+        }
+
+    }
+
+    .navbar-nav{
+        li{
+            a{
+                @include padding(10px, 10px);
+                @extend %transition;
+                @extend %capitalize;
+                color: rgba(255, 255, 255, 0.8);
+                position: relative;
+                line-height: 3;
+                font-size: 14px;
+                margin-right: 5px;
+
+                &:hover{
+                    color: #FFF;
+                }
+
+                &::after{
+                    @extend %transition;
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: $greenColor;
+                }
+
+                &:hover::after{
+                    width: 100%;
+                }
+
+                &.active{
+                    color: #FFF;
+                }
+
+                &.active::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $greenColor;
+                }
+
+                &:focus{
+                    color: #FFF;
+                }
+
+            }
+        }
+    }
+
+    .nav .open > a, 
+    .nav .open > a:hover, 
+    .nav .open > a:focus{
+        background-color: transparent;
+        color: #FFF;
+    }
+
+    .dropdown-menu{
+        min-width: 200px;
+        right: auto;
+        left: 0;
+        li{
+            a{
+                color: $blackColor;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 15px;
+
+                &:hover{
+                    background-color: $greenColor;
+                    color: #FFF;
+                    padding-left: 25px;
+
+                    &::after{
+                        width: 0;
+                    }
+                }
+
+                @media #{$maxMobile} {
+                    color: rgba(255, 255, 255, 0.8) !important;
+
+                    &:hover{
+                        color: #FFF !important;
+                    }
+                }
+               
+            }
+        }
+    }
+    .navbar-collapse,
+    .navbar-form{
+        border: none;
+        background-color: $blackColor;
+    }
+
+.navbar-toggle{
+    @extend %transition;
+    border: 2px solid $greenColor;
+    margin-top: 16px;
+
+    &:hover,
+    &:focus{
+        background-color: $greenColor;
+
+        .icon-bar{
+            background-color: #FFF;
+        }
+    }
+
+    .icon-bar{
+        @extend %transition;
+        background-color: #FFF;
+    }
+}
+
+}
+/* End Header */
